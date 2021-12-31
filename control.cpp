@@ -62,7 +62,7 @@ int main()
     // Set up stdio
     stdio_init_all();
     int counter = 64;
-    int oldCounter = 64;
+    int oldCounter = 0;
     int minCounter = 0;
     int maxCounter = 127;
     int dir = 0;
@@ -96,7 +96,7 @@ int main()
             display.clear();
             // Draw Control Frame
             drawRect(&display, 1, 1, 41, 17);
-            fillRect(&display, 2, 2, counter * 40 / 128, 16);
+            fillRect(&display, 3, 3, counter * 39 / 127, 15);
             sprintf(text, "%3d", counter);
             drawText(&display, font_12x16, text, 42, 1, pico_ssd1306::WriteMode::ADD);
             display.sendBuffer();
